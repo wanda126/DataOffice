@@ -110,15 +110,15 @@ export const OnboardingWizard: React.FC<OnboardingProps> = ({ onComplete }) => {
       
      const handleFinish = async () => {
   ...
+const handleFinish = async () => {
   if (user) {
     await updateProfile({
-      maturity_level: avgScore,
-      maturity_assessment: assessment,
-      company: companyInfo.company || user.company
+      nivel_de_madurez: puntuacion_promedio,
+      evaluacion_madurez: assessment,
+      empresa: companyInfo.company || user.company
     });
   }
 };
-
   const handlePrevious = () => {
     if (currentStep > 0) {
       setCurrentStep(currentStep - 1);
