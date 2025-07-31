@@ -106,18 +106,18 @@ export const OnboardingWizard: React.FC<OnboardingProps> = ({ onComplete }) => {
         businessAlignment: answers.businessAlignment || 0
       };
 
-      // Update user profile with maturity assessment
-      if (user) {
-        await updateProfile({
-          maturity_level: avgScore,
-          maturity_assessment: assessment,
-          company: companyInfo.company || user.company
-        });
-      }
+     
       
-      onComplete();
-    }
-  };
+     const handleFinish = async () => {
+  ...
+  if (user) {
+    await updateProfile({
+      maturity_level: avgScore,
+      maturity_assessment: assessment,
+      company: companyInfo.company || user.company
+    });
+  }
+};
 
   const handlePrevious = () => {
     if (currentStep > 0) {
